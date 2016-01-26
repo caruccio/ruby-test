@@ -1,6 +1,12 @@
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
+gem 'puma'
 gem 'pg'
 gem 'devise'
 gem 'carrierwave'
@@ -13,9 +19,9 @@ gem 'omniauth-facebook'
 gem 'nokogiri'
 gem 'will_paginate'
 gem 'tire'
-gem 'moip', git: 'git://github.com/pitagg/moip-ruby.git', 
+gem 'moip', git: 'git://github.com/pitagg/moip-ruby.git',
             ref: '40ff0176f9acc96c45779d0ba6a288bc6ef642cc'
-gem 'httparty' 
+gem 'httparty'
 
 gem 'daemons'
 gem 'delayed_job_active_record'
@@ -26,8 +32,8 @@ gem 'rack-ssl-enforcer'
 gem 'whenever', :require => false
 
 #GEM's para criação e exportação para EXCEL (XSL)
-gem 'spreadsheet', :git => 'git://github.com/zdavatz/spreadsheet.git'
-gem 'to_xls', :git => "git://github.com/splendeo/to_xls.git"
+gem 'spreadsheet', '~> 1.1'
+gem 'to_xls', '~> 1.5'
 #
 
 #SEO
@@ -55,7 +61,7 @@ gem 'fog' #dependencia engines
 gem 'aasm'
 gem 'pismo' #metadata de págninas(títulos, etc.)
 gem 'simple_form'
-gem 'mustache' #logic-less templates
+gem 'mustache', '< 1.0' #logic-less templates
 gem 'poirot' #mustache no servidor e no cliente
 gem 'paper_trail' #versionamento dos registros importantes
 gem 'brazilian-rails' #recursos úteis para desenvolvedores brasileiros.
@@ -75,6 +81,7 @@ group :development, :staging, :test do
   gem 'factory_girl_rails'
   gem 'factory_girl-preload'
   gem 'faker'
+  gem 'debugger-ruby_core_source'
   gem 'debugger'
   gem 'ruby-debug-passenger'
 end
