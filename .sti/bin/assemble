@@ -4,4 +4,8 @@ set -x
 
 echo ">>> executando assemble"
 
-sleep 15
+if [ -x  ${STI_SCRIPTS_PATH}/assemble ]; then
+    source ${STI_SCRIPTS_PATH}/assemble
+fi
+
+cp config/amazon.yml.example config/amazon.yml

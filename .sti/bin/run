@@ -4,4 +4,8 @@ set -x
 
 echo ">>> executando run"
 
+if [ -x  ${STI_SCRIPTS_PATH}/run ]; then
+    source ${STI_SCRIPTS_PATH}/run
+fi
+
 sleep 15
