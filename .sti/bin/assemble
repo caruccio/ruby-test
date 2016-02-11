@@ -1,11 +1,5 @@
 #!/bin/bash
 
-set -x
-
 echo ">>> executando assemble"
 
-if [ -x  ${STI_SCRIPTS_PATH}/assemble ]; then
-    source ${STI_SCRIPTS_PATH}/assemble
-fi
-
-cp config/amazon.yml.example config/amazon.yml
+[ -x  ${STI_SCRIPTS_PATH}/assemble ] && source ${STI_SCRIPTS_PATH}/assemble
