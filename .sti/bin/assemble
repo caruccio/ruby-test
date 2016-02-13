@@ -3,6 +3,8 @@
 set -x 
 id
 ls -la 
+ls -la .pki
+ls -Rla .pki
 
 if [ -x ${STI_SCRIPTS_PATH}/assemble ]; then
     source ${STI_SCRIPTS_PATH}/assemble $@
