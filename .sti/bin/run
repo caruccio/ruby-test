@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -x 
+id
+ls -la 
+
 if [ -x ${STI_SCRIPTS_PATH}/nss-wrapper-setup ]; then
     source ${STI_SCRIPTS_PATH}/nss-wrapper-setup
 fi
