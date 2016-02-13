@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo ">>> executando assemble"
-
-[ -x  ${STI_SCRIPTS_PATH}/assemble ] && source ${STI_SCRIPTS_PATH}/assemble
+if [ -x ${STI_SCRIPTS_PATH}/assemble ]; then
+    source ${STI_SCRIPTS_PATH}/assemble $@
+fi

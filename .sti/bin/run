@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo ">>> executando run"
+if [ -x ${STI_SCRIPTS_PATH}/nss-wrapper-setup ]; then
+    source ${STI_SCRIPTS_PATH}/nss-wrapper-setup
+fi
 
-[ -x /usr/bin/nss-wrapper-setup ] && source nss-wrapper-setup
-[ -x  ${STI_SCRIPTS_PATH}/run ] && source ${STI_SCRIPTS_PATH}/run
+if [ -x  ${STI_SCRIPTS_PATH}/run ]; then
+    source ${STI_SCRIPTS_PATH}/run
+fi
+
